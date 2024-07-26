@@ -10,3 +10,6 @@ steps:
   #deploy to google cloud app engine
   - name: 'grc.io/cloud-builders/gcloud'
     args: ['app','deploy','--version=prod']
+
+options:
+  logging: CLOUD_LOGGING_ONLY

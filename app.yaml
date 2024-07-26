@@ -18,4 +18,3 @@ skip_files:
   - ^(.*/)?.*\.md$
   - ^(.*/)?.*\.yml$
   - ^LICENSE
-
