@@ -1,14 +1,14 @@
 steps:
   #install node package
-  - name: 'grc.io/cloud-builders/npm'
+  - name: 'ghrc.io/cloud-builders/npm'
     args: ['install']
 
   #build productive files
-  - name: 'grc.io/cloud-builders/npm'
+  - name: 'ghrc.io/cloud-builders/npm'
     args: ['run','build','--prod']
 
   #deploy to google cloud app engine
-  - name: 'grc.io/cloud-builders/gcloud'
+  - name: 'ghrc.io/cloud-builders/gcloud'
     args: ['app','deploy','--version=prod']
 
 options:
