@@ -8,4 +8,4 @@ RUN npm run prod
 FROM nginx:1.19
 
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /app/dist/angular-ecommerce/ /usr/share/nginx/html
+COPY --from=build /app/dist/healthy-pioneers/ /usr/share/nginx/html

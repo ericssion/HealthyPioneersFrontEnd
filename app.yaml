@@ -4,10 +4,10 @@ threadsafe: yes
 
 handlers:
   - url: /
-    static_files: dist/angular-ecommerce/index.html
-    upload: dist/angular-ecommerce/index.html
+    static_files: dist/healthy-pioneers/index.html
+    upload: dist/healthy-pioneers/index.html
   - url: /
-    static_dir: dist/angular-ecommerce
+    static_dir: dist/healthy-pioneers
 
 skip_files:
   - e2e/
