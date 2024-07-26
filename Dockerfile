@@ -1,11 +1,14 @@
-FROM node:22.5.1 as build
+FROM node:12.0 as build-stage
 WORKDIR /app
-
-COPY package*.json ./
+COPY package*.json /app/
 RUN npm install
-RUN npm run prod
+COPY ./ /app/
+ARG configuration=production
+RUN npm run build -- --output-path=./dist/out --configuration $configuration
 
-FROM nginx:1.19
 
-COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /app/dist/healthy-pioneers/ /usr/share/nginx/html
+FROM nginx:1.15
+#Copy ci-dashboard-dist
+COPY --from=build-stage /app/dist/out/ /usr/share/nginx/html
+#Copy default nginx configuration
+COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
