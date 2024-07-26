@@ -1,14 +1,14 @@
 steps:
   #install node package
-  - name: 'ghcr.io/cloud-builders/npm'
+  - name: 'ghcr.io/cloud-builders/npm:node-18.12.0'
     args: ['install']
 
   #build productive files
-  - name: 'ghcr.io/cloud-builders/npm'
+  - name: 'ghcr.io/cloud-builders/npm:node-18.12.0'
     args: ['run','build','--prod']
 
   #deploy to google cloud app engine
-  - name: 'ghcr.io/cloud-builders/npm'
+  - name: 'ghcr.io/cloud-builders/npm:node-18.12.0'
     args: ['app','deploy','--version=prod']
 
 options:
